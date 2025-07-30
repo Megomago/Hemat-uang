@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencatat Keuangan Pribadi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pencatat Keuangan</h1>
+            <p id="current-time"></p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Tambah Pengeluaran</h2>
+                <form id="expense-form">
+                    <div class="form-control">
+                        <label for="description">Lu beli apaan?</label>
+                        <input type="text" id="description" placeholder="" required>
+                    </div>
+                    <div class="form-control">
+                        <label for="price">Harga (Rp)</label>
+                        <input type="text" id="price" placeholder="" required inputmode="numeric">
+                    </div>
+
+                    <div class="customdate">
+                        <label for="cd">Tanggal kustom?</label>
+                        <input type="checkbox" name="cd" id="cd" class="checkbox">
+                    </div>
+
+                    <div class="form-control" id="date-time-container" style="display: none;">
+                        <label for="date">Infokan</label>
+                        <input type="date" id="date">
+                        <input type="time" id="time">
+                    </div>
+                    
+                    <button type="submit" class="btn">Simpan</button>
+                </form>
+            </section>
+
+            <section class="summary-section">
+                <h2>Ringkasan Bulanan</h2>
+                <div class="summary-controls">
+                    <select id="month-filter"></select>
+                    <h3>Total: <span id="monthly-total">Rp 0</span></h3>
+                </div>
+            </section>
+
+            <section class="list-section">
+                <h2>Daftar Pengeluaran</h2>
+                <ul id="expense-list"></ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
